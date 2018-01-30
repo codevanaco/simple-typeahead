@@ -1,0 +1,47 @@
+{
+    "status": true,
+    "error": null,
+    "data": {
+        "beer": {
+            "stout": [
+                "Belhaven Black Scottish Stout",
+                "Guinness Draught Bottle",
+                "Guinness Extra Stout"
+            ],
+            "malt": [
+                "Boxer Watermelon",
+                "Bud Light Lime Lime-a-rita",
+                "Bud Light Lime Mang-o-rita"
+            ],
+            "lager": [
+                "AC-DC Premium Lager",
+                "Alpine Lager",
+                "Amstel Light"
+            ],
+            "ale": [
+                "Affligem Blonde",
+                "Amsterdam Big Wheel",
+                "Amsterdam Boneshaker IPA",
+                "Affligem 1",
+                "Amsterdam 2",
+                "Amsterdam 3",
+                "Affligem 4",
+                "Amsterdam 5",
+                "Amsterdam 6",
+                "Affligem 12",
+                "Affligem 13",
+                "Affligem 14",
+                "Affligem 15",
+                "Affligem 151",
+                "Affligem 152",
+                "Affligem 16",
+                "Affligem 17",
+                "Amsterdam 22",
+                "Amsterdam 32",
+                "Affligem 42",
+                "Amsterdam 52",
+                "Amsterdam 62"
+            ]
+        }
+    }
+}
