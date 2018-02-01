@@ -25,7 +25,7 @@
             border-bottom: 2px #E7EDF1 solid !important;
             border-right: 0px !important;
 
-            background-image: url('td-icon-search.svg');
+            /* background-image: url('td-icon-search.svg');*/
             background-repeat: no-repeat !important;
             background-position-x: right !important;
             background-size: 23px !important;
@@ -39,9 +39,12 @@
             background-image: url(td-icon-select.svg);
             background-repeat: no-repeat!important;
             background-position-x: 96%!important;
-            padding-right: 42px!important;
+
             border-right: none!important;
             color: #878E96 !important;
+            padding-right: 72px!important;
+            width: 126px !important;
+            ;
         }
 
         .typeahead__button {
@@ -73,7 +76,7 @@
             background-color: #ffffff;
             border: 2px solid #eaeff3;
             width: 60%!important;
-            transform: translate(114px, -4px)!important;
+            transform: translate(127px, -4px)!important;
             max-width: 477px!important;
         }
 
@@ -91,7 +94,8 @@
             position: relative;
             border-top: 5px solid #fff!important;
         }
-        .typeahead-seemore{
+
+        .typeahead-seemore {
             color: #5acdea!important;
         }
 
@@ -104,17 +108,37 @@
         .typeahead__group-products {
             border-top: 2px solid #ecf0f4;
         }
-        .typeahead__container.loading .typeahead__query:after, .typeahead__container.loading .typeahead__query:before{
+
+        .typeahead__container.loading .typeahead__query:after,
+        .typeahead__container.loading .typeahead__query:before {
             top: 31%;
             width: 1.75rem;
-    height: 1.75rem;
+            height: 1.75rem;
         }
-        .typeahead__container.loading .typeahead__query:after{
+
+        .typeahead__container.loading .typeahead__query:after {
             border-color: #e9eff2 #62cfe8 #e7edf1 !important;
         }
 
-        .typeahead__field .typeahead__hint, .typeahead__field [contenteditable], .typeahead__field input, .typeahead__field textarea{
-            background: null;
+        .typeahead__field .typeahead__hint,
+        .typeahead__field [contenteditable],
+        .typeahead__field input,
+        .typeahead__field textarea {
+            /* background: null;*/
+        }
+
+        .typeahead-component {
+            max-width: 496px;
+            width: auto;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .typeahead__list {
+
+                width: 100%!important;
+                transform: translate(0px, -4px)!important;
+                max-width: none!important;
+            }
         }
     </style>
 
@@ -122,23 +146,26 @@
 
 <body>
 
-    <form id="form-beer_v1" name="form-beer_v1">
-        <div class="typeahead__container">
-            <div class="typeahead__field">
+    <div class="typeahead-component-2">
+        <form id="form-beer_v1" name="form-beer_v1">
+            <div class="typeahead__container">
+                <div class="typeahead__field">
 
-                <span class="typeahead__query">
-                    <input class="js-typeahead-beer_v1" name="beer_v1[query]" type="search" placeholder="Search" autocomplete="off">
-                </span>
-                <span class="typeahead__button">
-                    <button type="submit">
-                        <i class="typeahead__search-icon"></i>
-                    </button>
-                </span>
+                    <span class="typeahead__query">
+                        <input class="js-typeahead-beer_v1" name="beer_v1[query]" type="search" placeholder="Search" autocomplete="off" style="background-image: url(td-icon-search.svg)">
+                    </span>
+                    <span class="typeahead__button">
+                        <button type="submit">
+                            <i class="typeahead__search-icon"></i>
+                        </button>
+                    </span>
 
 
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+
 
     <script type="text/javascript" src="simple-typeahead.js"></script>
 
