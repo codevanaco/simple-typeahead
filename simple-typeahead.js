@@ -24,20 +24,20 @@ $(document).ready(function () {
         source: {
             "products": {
                 ajax: {
-                    url: "beer.json",
-                    path: "data.beer.ale"
+                    url: "http://localhost:3000/data",
+                    path: "beer.ale"
                 }
             },
             "invoices": {
                 ajax: {
-                    url: "beer.json",
-                    path: "data.beer.lager"
+                    url: "http://localhost:3000/data",
+                    path: "beer.lager"
                 }
             },
             "orders": {
                 ajax: {
-                    url: "beer.json",
-                    path: "data.beer.stout"
+                    url: "http://localhost:3000/data",
+                    path: "beer.stout"
                 }
             }
         },
@@ -52,7 +52,31 @@ $(document).ready(function () {
                    var temp_count = document.getElementsByClassName('typeahead__list')[0].children.length;
 
                    if(temp_count === 6){
-                    console.log('see more!');
+                    // do what we need here
+                    var li_element = document.createElement('li');
+                    var li_element_a_link = document.createElement('a');
+                    li_element_a_link_node = document.createTextNode('See more');
+
+                    var firstChild = document.getElementsByClassName('typeahead__list')[0].firstChild;
+                    var firstChildAttribute = firstChild.getAttribute("data-search-group");
+                    var uniqueUrl;
+
+                    if(firstChildAttribute === "products"){
+                        uniqueUrl = "/products";
+                    }else if(firstChildAttribute === "invoices"){
+                        uniqueUrl = "/invoices";
+                    }else{
+                        //orders
+                        uniqueUrl = "/orders";
+                    }
+
+                    li_element_a_link.setAttribute('href', uniqueUrl);
+                    li_element_a_link.setAttribute('class', 'typeahead-seemore');
+                    li_element_a_link.appendChild(li_element_a_link_node);
+
+                    li_element.appendChild(li_element_a_link);
+                    document.getElementsByClassName('typeahead__list')[0].appendChild(li_element);
+
                    }
                  
                 }
@@ -99,6 +123,14 @@ $(document).ready(function () {
                 //console.log('onSearch');
                 //console.log("search::"+uniqueTypeahead);
                 
+            },
+            onReceiveRequest: function(node, a, item, event){
+                console.log("REQUEST COMPLETED!!!!");
+            },
+            onSendRequest: function(node, a, item, event){
+                console.log("REQUEST SENT!!!!");
+
+                document.getElementsByClassName('js-typeahead-beer_v1')[0].style.backgroundImage = "none";
             }
 
         },
